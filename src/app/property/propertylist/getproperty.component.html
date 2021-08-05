@@ -1,0 +1,52 @@
+<title>Property Listed</title>
+
+<img class="home" src="../assets/Icon%20feather-home.svg" alt="Home">
+<div class="profile_header">
+  Listed Property
+</div>
+
+
+<div *ngFor="let property of properties;index as i;">
+
+  <div class="property">
+    <div class="editProperty">
+<!--      <img class="propertyImg" src="../assets/pexels-pixabay-277667/pexels-luis-yanez-206172.png" alt="img">-->
+<!--      <ng-image-slider [images]="propertyImg"-->
+<!--                       #nav-->
+<!--                       [imageSize]="{width: '100%'}  "></ng-image-slider>-->
+      <ngx-slick-carousel [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let img of propertyImg" class="slide">
+          <img src="{{ img.image }}" width="100%">
+        </div>
+      </ngx-slick-carousel>
+      <img (click)="editProperty(i)" class="edit" src="../assets/Icon%20feather-edit-2.svg" alt="edit">
+<!--      <img (click)="cancelProperty(i)" class="edit" src="../assets/Icon%20feather-edit-2.svg" alt="edit">-->
+    </div>
+
+    <div class="propertyName">
+      <div class="addressRentType">
+        <div class="address">
+          <img class="location" src="../assets/Icon%20metro-location.svg" alt="location">
+          {{properties[i].address}}
+        </div>
+
+        <div class="rentType">
+<!--          <div class="rent">$ rent/mon</div>-->
+          <div class="type">{{this.properties[i].propertyType.type}}</div>
+        </div>
+      </div>
+
+      <div class="nameTenantDetails">
+        <div class="name">{{properties[i].name}}</div>
+        <button (click)="tenantDetails(this.properties[i].id)" class="tenantDetails" typeof="button">Tenant Details</button>
+      </div>
+    </div>
+
+    <div class="occupancyAssign">
+      <div class="occupancy">2 Occupancy</div>
+      <button class="assign" typeof="button">Assign Tenant</button>
+    </div>
+  </div>
+
+</div>
+

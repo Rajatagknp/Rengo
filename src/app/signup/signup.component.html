@@ -1,0 +1,103 @@
+<title>{{title}}</title>
+
+<div class="header">
+  <img class="background" src="../assets/Subtraction%2014.svg" alt="background" width="100%">
+  <img class="logo_img" src="../assets/Group%20215.svg" alt="logo" width="41.86%">
+  <img routerLink="/login" class="back_button" src="../assets/Icon%20ionic-ios-arrow-round-back.svg" alt="back">
+</div>
+
+
+<div *ngIf=change_page>
+  <div class="hello_text">
+    Hello
+  </div>
+
+  <div style="text-align: center;font: normal normal normal 16px/21px Roboto;color: #1A1A1A;">
+    Looks like you aren't registered
+  </div>
+
+  <div style="text-align: center; font-weight:bold; color: #1A1A1A; margin-top: 8px; margin-bottom: 17px">
+    Let's Sign up
+  </div>
+
+  <div style="display: flex;flex-direction: column;">
+    <div style="display: flex;justify-content: center">
+      <input [(ngModel)]="firstname" #first_name="ngModel" class="first_name" typeof="text" placeholder="First Name" required>
+    </div>
+    <div class="required_field" *ngIf="(first_name.invalid && alert_user[0])">
+      First Name is required!!
+    </div>
+
+    <div style="display: flex;justify-content: center">
+      <input [(ngModel)]="lastname" #last_name="ngModel" class="last_name" typeof="text" placeholder="Last Name" required>
+    </div>
+    <div class="required_field" *ngIf="(last_name.invalid && alert_user[1])">
+      Last Name is required!!
+    </div>
+
+    <div style="display: flex;justify-content: center">
+      <input [(ngModel)]="password" #pass="ngModel" class="pass" typeof="text" placeholder="Enter Password" required>
+    </div>
+    <div class="required_field" *ngIf="(pass.invalid && alert_user[2])">
+      Password is required!!
+    </div>
+
+    <div style="display: flex;justify-content: center">
+      <input [(ngModel)]="re_password" #re_pass="ngModel" class="re_pass" typeof="text" placeholder="Re-Enter Password" required>
+    </div>
+    <div class="required_field" *ngIf="(re_pass.invalid && alert_user[3])">
+      Re enter Password is required!!
+    </div>
+    <div class="required_field" *ngIf="re_pass.value!=pass.value">
+      Password did not match!!
+    </div>
+  </div>
+
+  <div style="display: flex;justify-content: center">
+    <button class="continue" type="button" (click)="continue(first_name.invalid,last_name.invalid,pass.invalid,re_pass.invalid)">CONTINUE</button>
+  </div>
+
+</div>
+
+<div *ngIf = (!change_page)>
+  <div class="hello_text">
+    Account Type
+  </div>
+  <div style="display: flex;justify-content: center;margin-bottom: 46px">
+    <div style="text-align: center;font: normal normal normal 16px/21px Roboto;color: #1A1A1A;max-width: 43.2%">
+      Select the Account Which Suits you better
+    </div>
+  </div>
+  <div style="display: flex;flex-direction: column; align-items: center;">
+    <div class="type_owner">
+      <input class="user_type" type="radio" value="owner" name="type" [(ngModel)]="user_type" required #type="ngModel">
+      <div>
+        <div style="font: normal normal 500 16px/21px Roboto;color: #707070;">
+          Owner
+        </div>
+        <div style="font: normal normal 300 12px/16px Roboto;color: #707070;">
+          Assign Properties, Manage Tenant
+        </div>
+      </div>
+    </div>
+    <div class="type_owner">
+      <input class="user_type" type="radio" value="tenant" name="type" [(ngModel)]="user_type" required #type="ngModel">
+      <div>
+        <div style="font: normal normal 500 16px/21px Roboto;color: #707070;">
+          Tenant
+        </div>
+        <div style="font: normal normal 300 12px/16px Roboto;color: #707070;">
+          Notify Rent payment, ask documents
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex;justify-content: center">
+    <button class="continue" type="button" (click)="submit()">CONTINUE</button>
+  </div>
+</div>
+
+
+<div class="footer">
+  <img class="footer_img" src="../assets/Subtraction%2016.svg" alt="footer">
+</div>

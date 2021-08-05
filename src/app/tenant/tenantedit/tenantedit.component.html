@@ -1,0 +1,128 @@
+<title>Edit Tenant</title>
+
+<div style="background: #F4F4F4 0 0 no-repeat padding-box; min-height: 909px">
+
+  <img class="back_button"
+       routerLink="/tenant/list"
+       src="../assets/add_property/Icon%20ionic-ios-arrow-round-back.svg"
+       alt="back">
+
+  <div class="header">
+    Edit Tenant
+  </div>
+
+  <div class="tenantDetails">
+    <div class="tenantBasicDetails">
+      <div class="tenantImg">
+        <img src="../assets/Dashboard/pexels-suzy-hazelwood-3819390-1@2x.png" alt="user Img" width="89px" height="89px">
+      </div>
+      <div class="tenant">
+        <div class="tenantName">Tenant Name</div>
+        <div class="tenantGender">Gender, Nationality</div>
+        <div class="tenantProperty">Property Name</div>
+        <div class="tenantLivingSince">Living since 20 march, 2021</div>
+      </div>
+    </div>
+
+    <div class="separation"></div>
+
+    <div class="emailPhone">
+      <div class="email">
+        <div class="text">{{email_id}}</div>
+        <div>
+          <a [href]="emailString" target="_top">
+            <img class="img" src="../assets/Icon%20material-email.svg" alt="user Img" width="20px" height="15px">
+          </a>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="text">{{contact_no}}</div>
+        <div>
+          <a href="tel:{{contact_no}}">
+            <img class="img" src="../assets/Icon%20ionic-ios-call.svg" alt="user Img" width="17px" height="17px">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rent">
+
+    <div class="Date" style="margin-bottom: 24px">
+      <div class="text">Lease begin date</div>
+      <mat-form-field class="date-pick">
+        <input matInput [matDatepicker]="picker1" readonly placeholder="DD/MM/YYYY">
+        <mat-datepicker-toggle matSuffix [for]="picker1">
+          <mat-icon matDatepickerToggleIcon>
+            <img class="calImg" src="../assets/Icon%20feather-calendar.svg" alt="calender">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="Date" style="margin-bottom: 12px">
+      <div class="text">Lease End date</div>
+      <mat-form-field class="date-pick">
+        <input matInput [matDatepicker]="picker2" readonly placeholder="DD/MM/YYYY">
+        <mat-datepicker-toggle matSuffix [for]="picker2">
+          <mat-icon matDatepickerToggleIcon>
+            <img class="calImg" src="../assets/Icon%20feather-calendar.svg" alt="calender">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary" disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+    <div class="rentShare">
+      <div class="text">Rent Share</div>
+      <div class="options">
+        <button *ngFor="let button of rent_share"
+                class="btn rounded m-4"
+                [ngClass]="(selected_rent_share == button) ? 'btn-primary' : 'btn-default'"
+                (click)="onClickButton(button)">
+          <i>{{button.value_appears}}</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tenantDocuments">
+    <div class="upload_doc" style="margin-bottom: 29px">
+      <div class="doc_head">Tenant ID</div>
+      <div class="file_up">
+        <input #file1 type='file' (change)="selectpropertyimg($event,1)" style="display: none">
+        <input [(ngModel)]="user_img[1].name" class="file_input" typeof="text" placeholder="Download File">
+        <img class="upload" (click)="file1.click()" src="./assets/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+
+    <div class="horizontalLine" style="margin-bottom: 31px"></div>
+
+    <div class="upload_doc" style="margin-bottom: 6px">
+      <div class="doc_head">Lease Agreement</div>
+      <div class="file_up">
+        <input #file1 type='file' (change)="selectpropertyimg($event,1)" style="display: none">
+        <input [(ngModel)]="user_img[1].name" class="file_input" typeof="text" placeholder="Download File">
+        <img class="upload" (click)="file1.click()" src="./assets/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+
+    <div class="upload_doc">
+      <div class="doc_head">Utility Bills</div>
+      <div class="file_up">
+        <input #file1 type='file' (change)="selectpropertyimg($event,1)" style="display: none">
+        <input [(ngModel)]="user_img[1].name" class="file_input" typeof="text" placeholder="Download File">
+        <img class="upload" (click)="file1.click()" src="./assets/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+  </div>
+
+  <div class="saveButton">
+    <button class="save" type="button">Save & Continue</button>
+  </div>
+
+</div>

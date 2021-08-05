@@ -1,0 +1,89 @@
+.homeButton{
+  position: absolute;
+  padding: 15px 0 0 16px;
+  cursor: pointer;
+}
+
+
+.header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 10px 10px #6A63AC33;
+  border-radius: 0 0 20px 20px;
+  padding: 16px 0;
+  .listTenant{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #6A63AC;
+  }
+}
+
+.body{
+  margin: 20px 16px;
+  .searchTenant{
+    height: 40px;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #6A63AC33;
+    border-radius: 20px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    .searchText{
+      border-radius: 20px;
+      height: 38px;
+      border: 0;
+      outline: 0;
+      width: 100%;
+    }
+    .searchButton{
+      cursor: pointer;
+    }
+  }
+  .tenants{
+    padding: 16px 21px 23px 16px;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border-radius: 20px;
+    .tenantImgDetails{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      .userImg{
+        width: 96px;
+        height: 96px;
+        margin-right: 20px;
+      }
+      .tenantBasicDetails{
+        margin-top: 20px;
+        .name{
+          font: normal normal 500 16px/21px Roboto;
+          color: #1A1A1A;
+          margin-bottom: 10px;
+        }
+        .address{
+          font: normal normal normal 14px/19px Roboto;
+          color: #1A1A1A;
+        }
+      }
+      .editTenant{
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    }
+    .rentDetails{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .rent{
+        font: normal normal 500 16px/21px Roboto;
+        color: #6A63AC;
+      }
+      .livingSince{
+        font: normal normal 300 14px/19px Roboto;
+        color: #1A1A1A;
+      }
+    }
+    margin-bottom: 16px;
+  }
+}

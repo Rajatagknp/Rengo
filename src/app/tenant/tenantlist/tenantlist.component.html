@@ -1,0 +1,41 @@
+
+<title>Listed Tenant</title>
+
+<div style="background: #F4F4F4 0 0 no-repeat padding-box;">
+
+  <img class="homeButton"
+       src="../assets/Icon%20feather-home.svg"
+       alt="home">
+  <div class="header">
+    <div class="listTenant">Listed Tenant</div>
+  </div>
+
+  <div class="body">
+    <div class="searchTenant">
+      <input class="searchText" type="text" [(ngModel)]="searchTenant" placeholder="Search tenant by name, property">
+      <img class="searchButton"
+           src="../assets/Icon%20feather-search.svg"
+           alt="search">
+    </div>
+
+    <div class="tenants" *ngFor="let unitTenant of tenants;index as j;">
+      <div *ngFor="let tenant of unitTenant;index as i">
+        <div class="tenantImgDetails">
+          <img class="userImg" src="../assets/Dashboard/pexels-suzy-hazelwood-3819390-1@2x.png" alt="userImg">
+
+          <div class="tenantBasicDetails">
+            <div class="name">{{tenant.user.firstName}} {{tenant.user.lastName}}</div>
+            <div class="address">Property Address, City name, State</div>
+          </div>
+
+          <img (click)="editTenant(j,i)"  class="editTenant" src="../assets/Icon%20feather-edit-22.svg" alt="edit">
+        </div>
+
+        <div class="rentDetails">
+          <div class="rent">$ rent/month</div>
+          <div class="livingSince">Living since march 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

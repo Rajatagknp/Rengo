@@ -1,0 +1,194 @@
+*{
+  outline: 0;
+}
+
+button{
+  cursor: pointer;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0 0 !important;
+  width: 130px;
+}
+::ng-deep .mat-form-field-wrapper{
+  padding: 0 0 !important;
+}
+::ng-deep .mat-form-field-underline{
+  height: 0 !important;
+}
+
+
+
+.back_button{
+  cursor: pointer;
+  position: absolute;
+  padding: 20.5px 0 20.5px 16px;
+}
+
+.header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 10px 10px #6A63AC33;
+  border-radius: 0 0 20px 20px;
+  padding: 17px 0 17px 0;
+  font: normal normal bold 16px/21px Roboto;
+  letter-spacing: 0;
+  color: #6A63AC;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 21px;
+}
+
+.tenantDetails{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  margin: 0 16px 16px 16px;
+  padding: 16px 12px 14px 10px;
+  .tenantBasicDetails{
+    display: flex;
+    flex-direction: row;
+    .tenant{
+      margin-left: 15px;
+      color: #1A1A1A;
+      letter-spacing: 0;
+      .tenantName{
+        font: normal normal bold 16px/21px Roboto;
+        margin-bottom: 5px;
+      }
+      .tenantGender{
+        font: normal normal normal 14px/19px Roboto;
+        margin-bottom: 5px;
+      }
+      .tenantProperty{
+        font: normal normal normal 14px/19px Roboto;
+        margin-bottom: 4px;
+      }
+      .tenantLivingSince{
+        font: italic normal normal 12px/16px Roboto;
+        color: #AEAAAA;
+      }
+    }
+  }
+  .separation{
+    border-top: 2px solid #6A63AC33;
+    margin-bottom: 8px;
+  }
+  .emailPhone{
+    display: flex;
+    flex-direction: column;
+    margin-right: 11px;
+    .email,.phone{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .text{
+        font: normal normal 500 14px/19px Roboto;
+        color: #1A1A1A;
+      }
+      .img{
+        cursor: pointer;
+      }
+    }
+    .email{
+      margin-bottom: 13.74px;
+    }
+  }
+}
+
+.rent{
+  margin: 0 16px 16px 16px;
+  padding: 23px 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  .Date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .text{
+      font: normal normal normal 14px/19px Roboto;
+      color: #1A1A1A;
+    }
+    .date-pick{
+      border: 1px solid #6A63AC4D;
+      border-radius: 5px;
+      height: 40px;
+      display: flex;
+      padding-left: 11.5px;
+      .calImg{
+        position: absolute;
+        top: 0;
+        right: 10.5px;
+      }
+    }
+  }
+  .rentShare{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text{
+      font: normal normal normal 14px/19px Roboto;
+      color: #1A1A1A;
+    }
+    .options{
+      .btn-default,.btn-primary{
+        width: 49px;
+        height: 40px;
+        border: 1px solid #6A63AC4D;
+        border-radius: 5px;
+        margin-left: 8.91px;
+        background: #FFFFFF 0 0 no-repeat padding-box;
+      }
+      .btn-primary{
+        background: #DBD7FF 0 0 no-repeat padding-box;
+      }
+    }
+  }
+}
+
+.tenantDocuments{
+  margin: 0 16px 30px 16px;
+  padding: 8px 0;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  .upload_doc{
+    margin-left: 12px;
+    margin-right: 19px;
+    .doc_head{
+      font: normal normal normal 14px/19px Roboto;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+    .file_up{
+      display: flex;
+      align-items: center;
+      .file_input{
+        height: 39px;
+        width: 82.93333vw;
+        border: 1px solid #6A63AC4D;
+        border-radius: 5px;
+        padding: 0 10px;
+      }
+      .upload{
+        margin-left: -30px;
+        cursor: pointer;
+      }
+    }
+  }
+  .horizontalLine{
+    border-top: 3px solid #6A63AC33;
+  }
+}
+
+.saveButton{
+  display: flex;
+  justify-content: center;
+  .save{
+    background: #6A63AC 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    padding: 12px 8px;
+    border: 0;
+    color: #FFFFFF;
+  }
+}

@@ -1,0 +1,38 @@
+<title>{{title}}</title>
+
+<div class="header">
+  <img class="background" src="../assets/Subtraction%2014.svg" alt="background" width="100%">
+  <img class="logo_img" src="../assets/Group%20215.svg" alt="logo" width="41.86%">
+</div>
+
+<div class="right_half_circle" style="display: flex;justify-content: flex-end">
+  <img src="../assets/Subtraction%2012.svg" alt="right_circle">
+</div>
+
+<div class="welcome_text">
+  Welcome
+</div>
+
+<div style="display: flex;justify-content: center">
+  <div>
+    <input [(ngModel)]="email_address" class="email_id" typeof="text" placeholder="Please enter your email address" required #email_id="ngModel">
+  </div>
+</div>
+
+<div class="required_field" *ngIf="(email_id.invalid && alert_user)">
+  Email Id required!!
+</div>
+
+<div style="display: flex;justify-content: center;">
+  <button class="continue" type="button" (click)="continue(email_id.invalid)">
+    <span class="button_text">CONTINUE</span>
+  </button>
+</div>
+
+<div class="left_half_circle" style="display: flex;justify-content: flex-start">
+  <img src="../assets/Subtraction%2013.svg" alt="left_circle">
+</div>
+
+<div class="footer">
+  <img class="footer_img" src="../assets/illustrator.svg" alt="footer" width="78.666%">
+</div>

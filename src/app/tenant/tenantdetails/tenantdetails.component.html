@@ -1,0 +1,202 @@
+
+<title>Saved Tenant</title>
+
+<div *ngIf="(!selectUnit) && (!searchTenant)"
+     style="background: #F4F4F4 0 0 no-repeat padding-box;min-height: 812px">
+
+  <img routerLink="/property/list"
+       class="back_button"
+       src="../assets/add_property/Icon%20ionic-ios-arrow-round-back.svg"
+       alt="back">
+  <div class="header">
+    <div class="add_property">Saved Tenant</div>
+  </div>
+
+
+
+  <div class="property">
+
+    <div class="propertyImg">
+      <ngx-slick-carousel [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let img of propertyImg" class="slide">
+          <img src="{{ img.image }}" width="100%">
+        </div>
+      </ngx-slick-carousel>
+    </div>
+
+    <div class="address">
+      <img class="location" src="../assets/Icon%20metro-location.svg" alt="location">
+      Saved Address, IN
+    </div>
+
+    <div class="basicDetails">
+      <div class="nameType">
+        <div class="name">Name Of Property</div>
+        <div class="type">Property type</div>
+      </div>
+
+      <div class="occupancy">
+        <div class="text">occupancy</div>
+        <div class="value">2/3</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngFor="let tenant of tenants;index as i" class="propertyTenant">
+    <div class="tenantDetails">
+      <img src="../assets/Dashboard/pexels-suzy-hazelwood-3819390-1@2x.png" alt="user Img">
+      <div class="tenantBasic">
+        <div class="name">{{tenant.user.firstName}} {{tenant.user.lastName}}</div>
+        <div class="gender">{{tenant.user.gender}}</div>
+        <div class="livingSince">Living since {{tenant.startAt}}</div>
+      </div>
+    </div>
+
+    <div class="horizontalLine"></div>
+
+    <div class="tenantRentDetails">
+      <div class="text">
+        <div class="inputText1">Rent</div>
+        <div class="inputText2">$ 200/m</div>
+      </div>
+
+      <div class="text">
+        <div class="inputText1">Security Deposit</div>
+        <div class="inputText2">$ 5000</div>
+      </div>
+    </div>
+
+    <div class="horizontalLine"></div>
+
+    <div class="tenantRentDetails">
+      <div class="text">
+        <div class="inputText1">Contact</div>
+        <div class="inputText2">{{tenant.user.phone}}</div>
+      </div>
+
+      <div class="text">
+        <div class="inputText1">Email</div>
+        <div class="inputText2">{{tenant.user.email}}</div>
+      </div>
+    </div>
+
+    <div class="horizontalLine"></div>
+
+    <div class="tenantRentDetails">
+      <div class="text">
+        <div class="inputText1">Lease begin Date</div>
+        <div class="inputText2">{{tenant.rentInfo.startAt}}</div>
+      </div>
+
+      <div class="text">
+        <div class="inputText1">Lease End Date</div>
+        <div class="inputText2">{{tenant.rentInfo.endAt}}</div>
+      </div>
+    </div>
+
+    <div class="horizontalLine"></div>
+
+    <div class="tenantRentDetails">
+      <div class="text">
+        <div class="inputText1">Next Home</div>
+        <div class="inputText2">Street,City, State</div>
+      </div>
+
+      <div class="text">
+        <div class="inputText1">Previous Home</div>
+        <div class="inputText2">Street,City, State</div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <div class="addTenantButton">
+    <button (click)="addTenant()" class="addTenant" type="button"> Add Tenant</button>
+  </div>
+
+</div>
+
+
+<div *ngIf="(selectUnit) && (!searchTenant)">
+
+  <div class="selectUnitBody">
+    <div class="closeButton">
+      <img (click)="selectUnit = (!selectUnit)"
+        style="cursor: pointer"
+        src="../assets/Group%2086.svg"
+        alt="back">
+    </div>
+
+    <div class="bodyHeader">Select Property & Unit</div>
+
+    <div class="selectOptions">
+      <select [(ngModel)]="selectedUnitId"
+              class="select">
+        <option
+          class="option"
+          *ngFor="let unit of units;index as i"
+          value="{{unit.id}}">{{unit.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="footer">
+      <img class="footer_back" style="margin-right: 24px" src="../assets/add_property/Group%2019.svg" alt="back">
+      <img (click)="selectUnitId()" class="footer_back" src="../assets/add_property/Group%201.svg" alt="next">
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="(selectUnit) && (searchTenant)">
+
+  <div class="selectUnitBody">
+    <div class="closeButton">
+      <img (click)="searchTenant = (!searchTenant)"
+           style="cursor: pointer"
+           src="../assets/Group%2086.svg"
+           alt="back">
+    </div>
+
+    <div class="emailButton">
+      <img (click)="searchTenant = (!searchTenant)"
+           style="cursor: pointer"
+           src="../assets/Icon%20material-email.svg"
+           alt="back">
+    </div>
+
+
+    <div class="selectOptions" style="display: flex;">
+      <input [(ngModel)]="tenantEmail" class="select" type="text" placeholder="Search tenant email">
+      <img (click)="searchTenantEmail()"
+           style="cursor: pointer;"
+           src="../assets/Icon%20ionic-ios-search.svg"
+           alt="search">
+    </div>
+
+    <div style="margin-top: 16px" *ngIf="foundTenant">
+      <div *ngIf="tenants.length==0">
+        <button routerLink="/tenant/add" class="assignTenant" type="button">Add New tenant</button>
+      </div>
+      <div *ngIf="tenants.length>0">
+        <button (click)="assignTenant()" class="assignTenant" type="button">Assign</button>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px">
+      <button routerLink="/property/list" class="cancelButton" type="button">Cancel</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+

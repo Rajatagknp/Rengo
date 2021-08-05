@@ -1,0 +1,69 @@
+.header{
+  .background{
+    @media only screen and (min-width: 768px){
+      max-width: 768px;
+      margin-left: calc(50vw - 768px/2);
+    }
+  }
+  .logo_img{
+    position: absolute;
+    left: calc(50vw - 41.86%/2);
+    top: 16.8vw;
+    max-width: 157px;
+    @media only screen and (min-width: 375px){
+      left: calc(50vw - 157px/2);
+      top: 63px;
+    }
+  }
+  .back_button{
+    padding: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    left: 16px;
+    @media only screen and (min-width: 768px){
+      left: calc(50vw - 768px/2 + 16px);
+    }
+   }
+  margin-bottom: 32px;
+}
+
+.header_2{
+  text-align: center;
+  font: normal normal bold 32px/19px Roboto;
+  color: #6A63AC;
+  margin-bottom: 86px;
+}
+
+.body_1,.body_2{
+  font: normal normal 700 16px/21px Roboto;
+  color: #1A1A1A;
+  text-align: center;
+}
+
+.app_property{
+  margin-top: 14px;
+  cursor: pointer;
+  background: #F8A9D3 0 0 no-repeat padding-box;
+  width: 80vw;
+  max-width: 300px;
+  height: 50px;
+  border-radius: 26px;
+  border: 0;
+  margin-bottom: 10px;
+  .app_property_text{
+    font: normal normal bold 16px/17px Roboto;
+    color: #FFFFFF;
+  }
+}
+
+.footer{
+  .footer_img{
+    width: 58.9333vw;
+    margin-left: calc(50vw - 58.9333%/2);
+    @media only screen and (min-width: 768px){
+      max-width: 452.608px;
+      margin-left: calc(50vw - 452.608px/2);
+    }
+  }
+}

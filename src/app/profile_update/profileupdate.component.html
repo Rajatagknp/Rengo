@@ -1,0 +1,99 @@
+<div style="background: #F4F4F4 0 0 no-repeat padding-box; min-height: 900px">
+
+  <img class="home" src="../assets/Icon%20feather-home.svg" alt="Home">
+  <div class="profile_header">
+    {{profile_update_head}} Profile
+  </div>
+
+  <div class="profile_body">
+
+    <div class="user_img">
+      <img class="user_pic" src="../assets/Group%20344.svg" alt="user_pic">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">First Name *</div>
+      <input [(ngModel)]="first_name" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Last Name *</div>
+      <input [(ngModel)]="last_name" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Email Id *</div>
+      <input [(ngModel)]="email_id" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Mobile No.</div>
+      <input [(ngModel)]="phone_no" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Nationality *</div>
+      <input [(ngModel)]="nationality__" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Gender *</div>
+      <div>
+        <select [(ngModel)]='selected_gender' class='input'>
+          <option *ngFor="let data of gender__" value={{data.value}}>{{data.value_appears}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">D.O.B</div>
+      <mat-form-field class="input_date">
+        <input #birth_date matInput [matDatepicker]="picker1" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker1">
+          <mat-icon matDatepickerToggleIcon>
+            <img src="../assets/Icon%20feather-calendar.svg" alt="user_pic">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Age</div>
+      <span class="input">{{user_age(birth_date.value)}}</span>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Profession</div>
+      <div>
+        <select [(ngModel)]='selected_profession' class='input'>
+          <option *ngFor="let data of profession" value={{data.value}}>{{data.value_appears}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Marital Status</div>
+      <div>
+        <select [(ngModel)]='selected_marital' class='input'>
+          <option *ngFor="let data of marital" value={{data.value}}>{{data.value_appears}}</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="button">
+      <button class="cancel" typeof="button">Cancel</button>
+      <button class="save" typeof="button">Save</button>
+    </div>
+
+    <div class="uses_date">
+      Using Rengo Since : 20 March, 2021
+    </div>
+
+  </div>
+
+
+
+
+</div>

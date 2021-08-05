@@ -1,0 +1,139 @@
+.header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 10px 10px #6A63AC33;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 4.2666vw;
+  padding-left: 4.2666vw;
+  .dashboard{
+    font: normal normal bold 18px/24px Roboto;
+    color: #6A63AC;
+    margin-top: 14px;
+    margin-bottom: 16px;
+  }
+  margin-bottom: 32px;
+}
+
+.collected_payment_and_reminder{
+  width: 91.4666vw;
+  margin-left: 4.26666vw;
+  background: #6A63AC 0 0 no-repeat padding-box;
+  border-radius: 21px;
+}
+
+.collected_payment{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding: 16px 4.2666vw 16px 4.2666vw;
+  .progress_bar{
+    margin-top: 29px;
+    margin-bottom: 8px;
+    height: 12px;
+    background: #CACACA 0 0 no-repeat padding-box;
+    border-radius: 6px;
+    .progress_bar_1{
+      height: 12px;
+      background: #6A63AC 0 0 no-repeat padding-box;
+      border: 1px solid #FFFFFF;
+      border-radius: 6px;
+    }
+  }
+  .payment_due{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.notify_tenant{
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  .remaining{
+    margin: 17px 0 16px 4.3vw;
+    color: #FFFFFF;
+  }
+  .reminder{
+    margin: 11px 4.266vw 9px 0;
+    .reminder_button{
+      background: #FFFFFF 0 0 no-repeat padding-box;
+      border-radius: 8px;
+      padding: 7px;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+  margin-bottom: 16px;
+}
+
+.manage{
+  width: 91.4666vw;
+  margin-left: 4.26666vw;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding: 18px 4.26666vw 20px 4.26666vw;
+  display: flex;
+  justify-content: space-between;
+  .manage_property,.manage_tenant{}
+  .manage_header{
+    font: normal normal 800 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 22px;
+  }
+  .progress_bar{
+    .inside_data{
+      position: relative;
+      top: -94px;
+      left: 45px;
+      width: 10px;
+      .total{
+        font: normal normal 500 16px/21px Roboto;
+        color: #707070;
+      }
+      .value{
+        font: normal normal bold 32px/43px Roboto;
+        color: #1A1A1A;
+      }
+    }
+  }
+  .button{
+    margin-top: 12px;
+    .button_press{
+      cursor: pointer;
+      background: #6A63AC 0 0 no-repeat padding-box;
+      border-radius: 8px;
+      padding: 8px 14px;
+      border: 0;
+    }
+    margin-bottom: 13px;
+  }
+  .manage_data{
+    font: normal normal normal 14px/19px Roboto;
+    color: #1A1A1A;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .edit_img{
+      margin-right: 7.48px;
+    }
+  }
+}
+
+.property_calculation{
+  margin-top: 16px;
+  width: 91.4666vw;
+  margin-left: 4.26666vw;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 21px;
+  .property_number{
+    .rent_per{
+    }
+    .rent_footer{
+      text-align: center;
+      font: normal normal bold 16px/21px Roboto;
+      color: #1A1A1A;
+    }
+  }
+}

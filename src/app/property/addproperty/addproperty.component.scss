@@ -1,0 +1,292 @@
+*{
+  outline: 0;
+}
+
+.requiredItem{
+  color: red;
+  font-size: small;
+}
+
+
+.back_button{
+  cursor: pointer;
+  position: absolute;
+  padding: 20.5px 0 20.5px 16px;
+}
+
+.header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 10px 10px #6A63AC33;
+  border-radius: 0 0 20px 20px;
+  padding: 16px 0;
+  font: normal normal bold 16px/21px Roboto;
+  letter-spacing: 0;
+  color: #6A63AC;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.progress_bar,.progress_bar2{
+  width: 91.4666666vw;
+  margin-left: 4.26666vw;
+  height: 5px;
+  background: #CACACA 0 0 no-repeat padding-box;
+  border-radius: 3px;
+  margin-bottom: 31px;
+  display: flex;
+  justify-content: space-between;
+  .round,.round2{
+    margin-top: -8px;
+    width: 18px;
+    height: 18px;
+    background: #CACACA 0 0 no-repeat padding-box;
+    border-radius: 50%;
+  }
+}
+.progress_bar2{
+  background: #6A63AC 0 0 no-repeat padding-box;
+  .round2{
+    background: #6A63AC 0 0 no-repeat padding-box;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.property_details{
+  margin: 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding: 24px 24px 12px 24px;
+  .details_header{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+  .details_body{
+    font: normal normal normal 16px/21px Roboto;
+    color: #1A1A1A;
+    .details_body_1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      .input{
+        background-color: #FFFFFF;
+        border: 1px solid #6A63AC4D;
+        border-radius: 8px;
+        height: 40px;
+        width: 59.73333vw;
+        padding: 0 16px;
+        outline: 0;
+        .inputSelect{
+          background-color: #FFFFFF;
+          border: 0;
+          border-radius: 8px;
+          width: calc(59.73333vw - 32px);
+          height: 38px;
+          outline: 0;
+          .options{
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.upload_img{
+  margin: 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding: 16px;
+  .img_header{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #1A1A1A;
+  }
+  .upload_here{
+    font: normal normal normal 14px/19px Roboto;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .upload{
+      cursor: pointer;
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  .footer_back{
+    cursor: pointer;
+  }
+}
+
+.add_unit{
+  margin: 24px;
+  padding: 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  .unit_header{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 11px;
+    position: relative;
+    .options{
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .add_unit_name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    .input{
+      border: 1px solid #6A63AC4D;
+      border-radius: 5px;
+      height: 40px;
+      width: 59.73333vw;
+      padding: 0 10px 0 10px;
+      outline: 0;
+    }
+  }
+  .occupancy{
+    font: normal normal normal 16px/21px Roboto;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .slider{
+      width: 40vw;
+      margin-right: 10px;
+      margin-top: -15px;
+    }
+    .slider_input{
+      border: 1px solid #6A63AC4D;
+      padding: 8px;
+      text-align: center;
+      font: normal normal bold 20px/21px Roboto;
+      color: #1A1A1A;
+    }
+  }
+  .upload_here{
+    font: normal normal normal 16px/19px Roboto;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .upload{
+      cursor: pointer;
+    }
+  }
+}
+
+.fixed_rent{
+  margin: 17px 24px 17px 24px;
+  padding: 9px 16px 24px 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  .rent_header{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 16px;
+  }
+  .rent_data{
+    font: normal normal normal 16px/21px Roboto;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .rentInput{
+      border: 1px solid #6A63AC4D;
+      border-radius: 5px;
+      height: 40px;
+      width: 59.73333vw;
+      margin-bottom: 12px;
+      padding: 0 10px 0 10px;
+      outline: 0;
+    }
+  }
+}
+
+.other_bills{
+  margin: 0 24px 25px 24px;
+  padding: 9px 16px 34px 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  .other_bill_header{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 19px;
+  }
+  .form-control2,.form-control{
+    background-color: #FFFFFF;
+    width: 83.155vw;
+    border: 1px solid #6A63AC4D;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+  .form-control2{
+    width: 21.6vw;
+  }
+  .choose_bills_to_add{
+    margin: 12px 0 12px 0;
+    width: 83.155vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .add_more_bills{
+    font: normal normal normal 14px/19px Roboto;
+    color: #6A63AC;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+.footer2{
+  font: normal normal normal 14px/19px Roboto;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .save_button,.add_button,.copy_button{
+    cursor: pointer;
+    background: #6A63AC 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    padding: 11px 0 11px 0;
+    border: 0;
+    width: 150px;
+    color: #FFFFFF;
+    font: normal normal normal 14px/19px Roboto;
+  }
+  .add_button{
+    margin: 19px 0 19px 0;
+    color: #6A63AC;
+    background-color: #F4F4F4;
+    border: 1px solid #6A63AC;
+  }
+  .copy_button{
+    color: #6A63AC;
+    background-color: #F4F4F4;
+    border: 1px solid #6A63AC;
+  }
+  padding-bottom: 50px;
+}

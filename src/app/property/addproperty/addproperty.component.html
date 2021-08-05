@@ -1,0 +1,215 @@
+
+
+<div style="background: #F4F4F4 0 0 no-repeat padding-box;min-height: 812px">
+
+
+  <div *ngIf=(!addUnit)>
+
+    <title>Add Property</title>
+
+    <img routerLink="/property" class="back_button" src="../../../assets/add_property/Icon%20ionic-ios-arrow-round-back.svg" alt="back">
+    <div class="header">
+      <div class="add_property">Add Property</div>
+    </div>
+
+    <div class="progress_bar">
+      <div class="round" style="background-color: #6A63AC"></div>
+      <div class="round"></div>
+    </div>
+
+    <div class="property_details">
+
+      <div class="details_header">
+        Property Details
+      </div>
+
+      <div class="details_body">
+
+        <div class="details_body_1">
+          <div>Name</div>
+          <div>
+            <input [(ngModel)]="propertyName" class="input" typeof="text" required #property_name="ngModel">
+            <div *ngIf="property_name.invalid && isValidForm" class="requiredItem">
+              required
+            </div>
+          </div>
+        </div>
+
+        <div class="details_body_1">
+          <div>Address</div>
+          <div>
+            <input [(ngModel)]="propertyAddress" class="input" typeof="text" required #property_address="ngModel">
+            <div *ngIf="property_address.invalid && isValidForm" class="requiredItem">
+              required
+            </div>
+          </div>
+        </div>
+
+        <div class="details_body_1">
+          <div>Type</div>
+          <div>
+            <div class='input'>
+              <select [(ngModel)]='selectPropertyType' class='inputSelect' #property_type="ngModel">
+                <option class="options" *ngFor="let type of propertyType" value={{type.id}}>{{type.type}}</option>
+              </select>
+            </div>
+            <div *ngIf="(!property_type.value) && isValidForm" class="requiredItem">
+              required
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="upload_img">
+      <div class="img_header">Upload Property Images</div>
+
+      <div class="upload_here">
+        <div style="font: normal normal normal 14px/19px Roboto;">Building Images</div>
+        <div>
+          <input #file1 type='file' (change)="selectPropertyImg($event,0)" style="display: none" accept=".png,.jpeg,.pdf">
+          <img class="upload" (click)="file1.click()" [src]='propertyImg[0].url' alt="upload" width="55px" height="50px">
+        </div>
+        <div>
+          <input #file2 type='file' (change)="selectPropertyImg($event,1)" style="display: none" accept=".png,.jpeg,.pdf">
+          <img class="upload" (click)="file2.click()" [src]='propertyImg[1].url' style="margin: 0 16px 0 16px" alt="upload" width="55px" height="50px">
+        </div>
+        <div>
+          <input #file3 type='file' (change)="selectPropertyImg($event,2)" style="display: none" accept=".png,.jpeg,.pdf">
+          <img class="upload" (click)="file3.click()" [src]='propertyImg[2].url' alt="upload" width="55px" height="50px">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img class="footer_back" routerLink="/property" style="margin-right: 24px" src="../../../assets/add_property/Group%2019.svg" alt="upload">
+      <img (click)="next(property_name.invalid,property_address.invalid,property_type.value)" class="footer_back" src="../../../assets/add_property/Group%201.svg" alt="upload">
+    </div>
+
+  </div>
+
+  <div *ngIf=(addUnit)>
+    <title>Add units</title>
+    <img (click)="next()" class="back_button" src="../../../assets/add_property/Icon%20ionic-ios-arrow-round-back.svg" alt="back">
+    <div class="header">
+      <div class="add_property">Add Property</div>
+    </div>
+
+    <div class="progress_bar2">
+      <div class="round2">
+        <img src="../../../assets/add_property/Path%2013.svg" alt="click">
+      </div>
+      <div class="round2"></div>
+    </div>
+
+    <div *ngFor="let unit_number of numberOfUnit;index as i">
+
+      <div class="add_unit">
+        <div class="unit_header">
+          <span>Unit {{unitName[i]}} Details</span>
+          <div class="options" *ngIf="(i!=0)">
+            <img (click)="copyUnits(i)" class="delete_unit" src="../../../assets/add_property/Icon%20feather-copy.svg" alt="copy" style="margin-right: 10px">
+            <img (click)="deleteUnit(i)" class="delete_unit" src="../../../assets/add_property/Icon%20material-delete.svg" alt="delete">
+          </div>
+        </div>
+
+
+        <div class="add_unit_name">
+          <div>Unit Name</div>
+          <div>
+            <input [(ngModel)]="unitName[i]" class="input" typeof="text" #unit_name="ngModel">
+            <div *ngIf="(!unit_name.value) && isValidUnit" class="requiredItem">
+              required
+            </div>
+          </div>
+        </div>
+
+        <div class="occupancy">
+          <div>Occupancy</div>
+          <div style="display: flex;align-items: center">
+            <div class="slider">
+              <ngx-slider [(value)]="occupancyValue[i]" [options]="options"></ngx-slider>
+            </div>
+            <div class="slider_input">
+              {{occupancyValue[i]}}
+            </div>
+          </div>
+        </div>
+
+        <div class="upload_here">
+          <div>Property Unit Images</div>
+          <div>
+            <input #file1 type='file' (change)="selectUnitImg($event,i,0)" style="display: none">
+            <img class="upload" (click)="file1.click()" [src]='unitImg[i][0].url' alt="upload" width="55px" height="50px">
+          </div>
+          <div>
+            <input #file2 type='file' (change)="selectUnitImg($event,i,1)" style="display: none">
+            <img class="upload" style="margin: 0 16px 0 16px" (click)="file2.click()" [src]='unitImg[i][1].url' alt="upload" width="55px" height="50px">
+          </div>
+          <div>
+            <input #file3 type='file' (change)="selectUnitImg($event,i,2)" style="display: none">
+            <img class="upload" (click)="file3.click()" [src]='unitImg[i][2].url' alt="upload" width="55px" height="50px">
+          </div>
+        </div>
+      </div>
+
+      <div class="fixed_rent">
+        <div class="rent_header">Monthly fixed rent Bill</div>
+        <div class="rent_data">
+          <div>Rent</div>
+          <div>
+            <input [(ngModel)]="unitRentCharge[i]" class="rentInput" typeof="text" #rent="ngModel">
+            <div *ngIf="(!rent.value) && isValidUnit" class="requiredItem">
+              required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="other_bills">
+        <div class="other_bill_header">Other Bills</div>
+        <div class="bill_options">
+          <select [(ngModel)]='billType' (click)="addBills(billType,i)" class='form-control'>
+            <option *ngFor="let bill of unitBills" value={{bill.id}}>{{bill.name}}</option>
+          </select>
+        </div>
+
+        <div class="choose_bills_to_add" *ngFor="let data of selectBills[i];index as ii">
+          <div style="display: flex;justify-content: space-between">
+            <input [ngModel]="findBillName(selectBills[i][ii].typeId)" typeof="text" class="form-control2" placeholder="enter bill name">
+          </div>
+          <div style="display: flex;justify-content: center;align-items: center">
+            <div>
+              <select [(ngModel)]='selectBills[i][ii].isFixed' class='form-control2'>
+                <option *ngFor="let type of unitBillType" value={{type.value}}>{{type.value_appears}}</option>
+              </select>
+            </div>
+
+            <div style="margin: 0 10px">
+              <input [(ngModel)]="selectBills[i][ii].value" type="number" class="form-control2" placeholder="value">
+            </div>
+
+            <div>
+              <img (click)="deleteBills(ii,i)" class="delete_bill" src="../../../assets/add_property/Icon%20feather-minus-circle.svg" alt="delete" style="cursor: pointer">
+            </div>
+          </div>
+        </div>
+
+        <div class="add_more_bills">
+          <span (click)="addMoreSelectBills(i)" style="cursor: pointer">+ Add Other Bills</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer2">
+      <button (click)="save()" class="save_button" typeof="button">Save</button>
+      <button (click)="addMoreUnits()" class="add_button" typeof="button">+ Add Another Unit</button>
+      <button (click)="copyUnits(0)" class="copy_button" typeof="button">Copy Unit</button>
+    </div>
+
+  </div>
+
+</div>
+

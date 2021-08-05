@@ -1,0 +1,153 @@
+<title>Add Tenant</title>
+
+<div style="background: #F4F4F4 0 0 no-repeat padding-box;min-height: 812px">
+
+  <img [routerLink]="(upload_doc) ? '/add_tenant' : '/dashboard/owner'"
+       class="back_button"
+       src="../assets/add_property/Icon%20ionic-ios-arrow-round-back.svg"
+       alt="back"
+       (click)="(upload_doc) ? upload_doc = (!upload_doc) : ''">
+  <div class="header">
+    <div class="add_property">Add Tenant</div>
+  </div>
+
+  <div class="progress_bar" *ngIf="(!upload_doc)">
+    <div class="round" style="background-color: #6A63AC"></div>
+    <div class="round"></div>
+  </div>
+
+  <div class="progress_bar2" *ngIf="(upload_doc)">
+    <div class="round2">
+      <img src="../assets/add_property/Path%2013.svg" alt="click">
+    </div>
+    <div class="round2"></div>
+  </div>
+
+  <div class="tenantbody" *ngIf="(!upload_doc)">
+
+    <div class="tenantbody_header">Basic Details</div>
+
+    <div class="user_data">
+      <div class="input_head">Profile Picture</div>
+      <div>
+        <input #file type='file' (change)="selectpropertyimg($event,0)" style="display: none">
+        <img class="upload" (click)="file.click()" [src]='user_img[0].url' alt="upload" width="55px" height="50px">
+      </div>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Name *</div>
+      <input [(ngModel)]="name" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Gender *</div>
+      <div>
+        <select [(ngModel)]='selected_gender' class='input'>
+          <option *ngFor="let data of gender__" value={{data.value}}>{{data.value_appears}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Email *</div>
+      <input [(ngModel)]="email_id" class="input" typeof="text">
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Mobile No.*</div>
+      <input [(ngModel)]="contact_no" class="input" typeof="text">
+    </div>
+
+
+    <div class="user_data">
+      <div class="input_head">Moving on</div>
+      <mat-form-field class="input_date">
+        <input #birth_date matInput [matDatepicker]="picker1" [(ngModel)]="moving_date" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker1">
+          <mat-icon matDatepickerToggleIcon>
+            <img class="inputDateImg" src="../assets/Icon%20feather-calendar.svg" alt="user_pic">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="user_data">
+      <div class="input_head">Moving Out</div>
+      <mat-form-field class="input_date">
+        <input #birth_date matInput [matDatepicker]="picker2" [(ngModel)]="outDate" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker2">
+          <mat-icon matDatepickerToggleIcon>
+            <img class="inputDateImg" src="../assets/Icon%20feather-calendar.svg" alt="user_pic">
+          </mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+    <div class="user_data">
+      <div class="input_head">Rent Share</div>
+      <div class="select_per">
+        <button *ngFor="let button of rent_share"
+                class="btn rounded m-4"
+                [ngClass]="(selected_rent_share == button) ? 'btn-primary' : 'btn-default'"
+                (click)="onClickButton(button)">
+          <i>{{button.value_appears}}</i>
+        </button>
+      </div>
+    </div>
+
+
+    <div class="footer">
+      <img class="footer_back" routerLink="/property" style="margin-right: 24px" src="../assets/add_property/Group%2019.svg" alt="upload">
+      <img (click)="next()" class="footer_back" src="../assets/add_property/Group%201.svg" alt="upload">
+    </div>
+
+  </div>
+
+  <div class="tenantbody" *ngIf="(upload_doc)">
+
+    <div class="tenantbody_header">Upload Documents</div>
+
+    <div class="upload_doc">
+      <div class="doc_head">Lease Rent Agreement</div>
+      <div class="file_up">
+        <input #file1 type='file' (change)="selectpropertyimg($event,1)" style="display: none">
+        <input [(ngModel)]="user_img[1].name" class="file_input" typeof="text" placeholder="upload files">
+        <img class="upload" (click)="file1.click()" src="./assets/add_property/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+
+    <div class="upload_doc">
+      <div class="doc_head">Tenant ID proof</div>
+      <div class="file_up">
+        <input #file2 type='file' (change)="selectpropertyimg($event,2)" style="display: none">
+        <input [(ngModel)]="user_img[2].name" class="file_input" typeof="text" placeholder="upload files">
+        <img class="upload" (click)="file2.click()" src="./assets/add_property/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+
+    <div class="upload_doc">
+      <div class="doc_head">Electricity Bill</div>
+      <div class="file_up">
+        <input #file3 type='file' (change)="selectpropertyimg($event,3)" style="display: none">
+        <input [(ngModel)]="user_img[3].name" class="file_input" typeof="text" placeholder="upload files">
+        <img class="upload" (click)="file3.click()" src="./assets/add_property/Icon%20feather-upload.svg" alt="upload" width="18px" height="18px">
+      </div>
+    </div>
+
+    <div class="upload_doc_footer">
+      <div class="text">
+        If not available, skip
+      </div>
+      <button (click)="save_continue()" class="save" typeof="button">Save & Continue</button>
+    </div>
+  </div>
+
+
+
+
+
+</div>

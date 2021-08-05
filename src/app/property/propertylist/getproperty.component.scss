@@ -1,0 +1,112 @@
+button{
+  cursor: pointer;
+}
+.slick-slider {
+  width: 100%;
+  margin: auto;
+}
+
+.home{
+  position: absolute;
+  padding: 16px 0 0 16px;
+}
+
+.profile_header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 12px 31px #6A63AC33;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  font: normal normal bold 16px/21px Roboto;
+  color: #6A63AC;
+  padding: 17px 0;
+  margin-bottom: 32px;
+}
+
+.property{
+  background: #6A63AC 0 0 no-repeat padding-box;
+  border-radius: 40px 40px 20px 20px;
+  margin: 16px;
+  padding-bottom: 4px;
+  .editProperty{
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border-radius: 0;
+    position: relative;
+    .propertyImg{
+      width: 100%;
+      height: 100%;
+    }
+    .edit{
+      cursor: pointer;
+      position: absolute;
+      top: 5vw;
+      right: 5vw;
+    }
+  }
+  .propertyName{
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border-radius: 0 0 20px 20px;
+    padding: 16px;
+    .addressRentType{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
+      .address{
+        font: normal normal normal 14px/19px Roboto;
+        color: #1A1A1A;
+        display: flex;
+        align-items: flex-start;
+        .location{
+          margin-right: 16px;
+        }
+      }
+      .rentType{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        color: #1A1A1A;
+        .rent{
+          font: normal normal 500 16px/21px Roboto;
+          color: #1A1A1A;
+        }
+        .type{
+          font: normal normal normal 14px/19px Roboto;
+          color: #1A1A1A;
+        }
+      }
+    }
+    .nameTenantDetails{
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      .name{
+        font: normal normal bold 18px/24px Roboto;
+        color: #1A1A1A;
+      }
+      .tenantDetails{
+        background: #D9D5FF 0 0 no-repeat padding-box;
+        border-radius: 8px;
+        padding: 8px;
+        border: 0;
+      }
+    }
+  }
+  .occupancyAssign{
+    margin: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .occupancy{
+      font: normal normal normal 14px/19px Roboto;
+      color: #FFFFFF;
+    }
+    .assign{
+      background: #FFFFFF 0 0 no-repeat padding-box;
+      border-radius: 8px;
+      padding: 8px;
+      border: 0;
+      font: normal normal normal 14px/19px Roboto;
+      color: #6A63AC;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+<title>Owner</title>
+
+
+<div style="background: #F4F4F4 0 0 no-repeat padding-box;">
+
+  <div class="header">
+    <div style="cursor: pointer">
+      <img src="../assets/Dashboard/Group%2044.svg" alt="">
+    </div>
+
+    <div class="dashboard">
+      Dashboard
+    </div>
+
+    <div style="cursor: pointer">
+      <img src="../assets/Dashboard/Group%2015.svg" alt="">
+    </div>
+  </div>
+
+  <div class="collected_payment_and_reminder">
+    <div class="collected_payment">
+      <div>
+        <div style="font: normal normal 400 16px/21px Roboto;color: #707070;">Rent</div>
+        <div style="font: normal normal 900 22px/29px Roboto;color: #1A1A1A;">${{total_payment}}</div>
+      </div>
+
+      <div class="progress_bar">
+        <div class="progress_bar_1" [style]="progress_bar_style">
+        </div>
+      </div>
+
+      <div class="payment_due">
+        <div>
+          <div style="font: normal normal 400 14px/19px Roboto;color: #707070;">Collected</div>
+          <div style="font: normal normal 900 16px/21px Roboto;color: #1A1A1A;">${{collected_payment}}</div>
+        </div>
+
+        <div style="text-align: right">
+          <div style="font: normal normal 400 14px/19px Roboto;color: #707070;">Pending</div>
+          <div style="font: normal normal 900 16px/21px Roboto;color: #1A1A1A;">${{total_payment-collected_payment}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notify_tenant">
+      <div class="remaining">
+        6 Tenant remains to pay
+      </div>
+      <div class="reminder">
+        <button class="reminder_button" typeof="button"><span>Send Reminder</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="manage">
+    <div class="manage_property">
+      <div class="manage_header" style="text-align: center">
+        Property
+      </div>
+
+      <div class="progress_bar">
+        <canvas width="112px" height="112px" baseChart
+                [data]="propertyChartData"
+                [labels]="propertyChartLabels"
+                [chartType]="ChartType"
+                [colors]="chartColors"
+                [options]='chartOptions'>
+        </canvas>
+
+        <div class="inside_data">
+          <div class="total">Total</div>
+          <div class="value">25</div>
+        </div>
+      </div>
+
+      <div style="display: flex;align-items: center;margin-top: -40px">
+        <div style="margin: 0 14px 0 0">
+          <div style="background: #CACACA 0 0 no-repeat padding-box;border-radius: 50%;width: 12px;height: 12px;margin-bottom: 11px;"></div>
+          <div style="background: #6A63AC 0 0 no-repeat padding-box;border-radius: 50%;width: 12px;height: 12px"></div>
+        </div>
+
+        <div style="font: normal normal normal 16px/21px Roboto;color: #000000;">
+          <div>Vacant</div>
+          <div>Occupied</div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button class="button_press" typeof="button"><span style="font: normal normal normal 14px/19px Roboto;color: white;">Add Property</span></button>
+      </div>
+
+      <div class="manage_data">
+        <img class="edit_img" src="../assets/Dashboard/Icon%20feather-edit-2.svg" alt="edit">
+        Manage Property
+      </div>
+    </div>
+    <div class="manage_tenant">
+      <div class="manage_header" style="text-align: center">
+        Tenant
+      </div>
+
+      <div class="progress_bar">
+        <canvas width="125px" height="125px" baseChart
+                [data]="tenantChartData"
+                [labels]="tenantChartLabels"
+                [chartType]="ChartType"
+                [colors]="chartColors"
+                [options]='chartOptions'>
+        </canvas>
+
+        <div class="inside_data">
+          <div class="total">Total</div>
+          <div class="value">25</div>
+        </div>
+      </div>
+
+      <div style="display: flex;align-items: center;margin-top: -40px">
+        <div style="margin: 0 14px 0 0">
+          <div style="background: #CACACA 0 0 no-repeat padding-box;border-radius: 50%;width: 12px;height: 12px;margin-bottom: 11px;"></div>
+          <div style="background: #6A63AC 0 0 no-repeat padding-box;border-radius: 50%;width: 12px;height: 12px"></div>
+        </div>
+        <div style="font: normal normal normal 16px/21px Roboto;color: #000000;">
+          <div>Unpaid Rent</div>
+          <div>Paid Rent</div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button class="button_press" typeof="button"><span style="font: normal normal normal 14px/19px Roboto;color: white;">Add Tenant</span></button>
+      </div>
+
+      <div class="manage_data">
+        <img class="edit_img" src="../assets/Dashboard/Icon%20feather-edit-2.svg" alt="edit">
+        Manage Tenant
+      </div>
+    </div>
+  </div>
+
+  <div class="property_calculation">
+    <div class="property_number">
+      <div class="rent_per">
+        <canvas style="width: 122px;height: 122px" baseChart
+                [data]="property_num_data"
+                [labels]="property_num_lab"
+                [chartType]="ChartType"
+                [colors]="chartColors">
+        </canvas>
+      </div>
+
+      <div class="rent_footer">Rent Percentage from Each Property</div>
+    </div>
+  </div>
+
+
+</div>

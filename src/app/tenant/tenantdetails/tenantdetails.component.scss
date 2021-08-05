@@ -1,0 +1,196 @@
+
+
+.header{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 12px 31px #00000029;
+  border-radius: 0 0 20px 20px;
+  padding: 16px 0;
+  .add_property{
+    text-align: center;
+    font: normal normal bold 16px/21px Roboto;
+    color: #6A63AC;
+  }
+}
+
+.back_button{
+  cursor: pointer;
+  position: absolute;
+  padding: 16px;
+}
+
+
+.property{
+  margin: 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  .propertyImg{
+    position: relative;
+    margin-bottom: 0;
+  }
+  .address {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    .location {
+      margin-right: 12px;
+    }
+  }
+  .basicDetails{
+    margin: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    .nameType{
+      display: flex;
+      flex-direction: column;
+      .name{
+        font: normal normal 550 16px/21px Roboto;
+        color: #1A1A1A;
+        margin-bottom: 7px;
+      }
+      .type{
+        font: normal normal normal 14px/19px Roboto;
+        color: #1A1A1A;
+      }
+    }
+    .occupancy{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .text{
+        font: normal normal normal 14px/19px Roboto;
+        color: #1A1A1A;
+        margin-bottom: 8px;
+      }
+      .value{
+        font: normal normal normal 16px/21px Roboto;
+        color: #1A1A1A;
+      }
+    }
+  }
+}
+
+.propertyTenant{
+  margin: 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  border-radius: 20px;
+  padding: 16px 13px 0 13px;
+  .tenantDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5px 12px 5px;
+    .tenantBasic{
+      margin-left: 10px;
+      .name{
+        font: normal normal 500 16px/21px Roboto;
+        color: #6A63AC;
+        margin-bottom: 10px;
+      }
+      .gender{
+        font: normal normal normal 14px/19px Roboto;
+        color: #1A1A1A;
+        margin-bottom: 10px;
+      }
+      .livingSince{
+        font: normal normal normal 12px/16px Roboto;
+        color: #948D8D;
+      }
+    }
+  }
+  .horizontalLine{
+    border-top: 1px solid #6A63AC33;
+  }
+  .tenantRentDetails{
+    margin: 11.5px 5px 8px 11px;
+    display: flex;
+    flex-direction: column;
+    .text{
+      display: flex;
+      justify-content: space-between;
+      .inputText1{
+        font: normal normal 500 16px/21px Roboto;
+        color: #1A1A1A;
+        margin-bottom: 10px;
+      }
+      .inputText2{
+        font: normal normal normal 14px/19px Roboto;
+        color: #1A1A1A;
+      }
+    }
+  }
+}
+
+.addTenantButton{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .addTenant{
+    cursor: pointer;
+    background: #6A63AC 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    padding: 8px 32px;
+    text-align: center;
+    font: normal normal normal 14px/19px Roboto;
+    color: #FFFFFF;
+    border: 0;
+  }
+}
+
+.selectUnitBody{
+  margin: 201px 16px 16px 16px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 3px 6px #6A63AC33;
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .emailButton{
+    margin-top: 24px;
+  }
+  .bodyHeader{
+    margin-top: 32px;
+    text-align: center;
+    font: normal normal medium 16px/21px Roboto;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+  }
+  .selectOptions{
+    border: 1px solid #6A63AC4D;
+    border-radius: 5px;
+    margin: 16px;
+    padding: 8px;
+    .select{
+      outline: 0;
+      width: 70vw;
+      max-width: 320px;
+      height: 40px;
+      background: #FFFFFF 0 0 no-repeat padding-box;
+      border: 0;
+    }
+  }
+  .footer{
+    margin-top: 32px;
+    .footer_back{
+      cursor: pointer;
+    }
+  }
+  .assignTenant{
+    cursor: pointer;
+    background: #6A63AC 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font: normal normal normal 14px/19px Roboto;
+    color: #FFFFFF;
+    border: 0;
+  }
+  .cancelButton{
+    cursor: pointer;
+    border: 1px solid #6A63AC;
+    border-radius: 5px;
+    padding: 8px 16px;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+  }
+}

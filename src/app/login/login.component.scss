@@ -1,0 +1,91 @@
+.header{
+  .background{
+    @media only screen and (min-width: 768px){
+      max-width: 768px;
+      margin-left: calc(50vw - 768px/2);
+    }
+  }
+  .logo_img{
+    position: absolute;
+    left: calc(50vw - 41.86%/2);
+    top: 16.8vw;
+    max-width: 157px;
+    @media only screen and (min-width: 375px){
+      left: calc(50vw - 157px/2);
+      top: 63px;
+    }
+  }
+  .back_button{
+    padding: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    left: 16px;
+    @media only screen and (min-width: 768px){
+      left: calc(50vw - 768px/2 + 16px);
+    }
+  }
+}
+
+.hello_text{
+  text-align: center;
+  font: normal normal bold 32px/19px Roboto;
+  color: #6A63AC;
+  margin-bottom: 65px;
+}
+
+
+.pass{
+  padding: 14.5px 24px;
+  background: #FFFFFF4D 0 0 no-repeat padding-box;
+  border: 1px solid #6A63AC;
+  border-radius: 26px;
+  width: 80vw;
+  max-width: 300px;
+  height: 50px;
+  outline: 0;
+}
+
+.required_field{
+  color: red;
+  font-size: small;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: max(20vw,calc(50vw - 155px));
+}
+
+.continue{
+  margin-top: 14px;
+  cursor: pointer;
+  background: #F8A9D3 0 0 no-repeat padding-box;
+  width: 80vw;
+  max-width: 300px;
+  height: 50px;
+  border-radius: 26px;
+  border: 0;
+  margin-bottom: 14px;
+  .button_text{
+    font: normal normal bold 16px/17px Roboto;
+    color: #FFFFFF;
+  }
+}
+
+.forget_pass{
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: max(20vw,calc(50vw - 155px));
+  font: italic normal normal 14px/19px Roboto;
+  color: #6A63AC;
+  padding-bottom: 7px;
+}
+
+.footer{
+  .footer_img{
+    margin-left: calc(50vw - 78.9333%/2);
+    @media only screen and (min-width: 768px){
+      max-width: 606.208px;
+      margin-left: calc(50vw - 606.208px/2);
+    }
+  }
+}

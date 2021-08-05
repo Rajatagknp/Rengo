@@ -1,0 +1,43 @@
+<title>{{title}}</title>
+
+<div class="header">
+  <img class="background" src="../assets/Subtraction%2014.svg" alt="background" width="100%">
+  <img class="logo_img" src="../assets/Group%20215.svg" alt="logo" width="41.86%">
+  <img routerLink="/login" class="back_button" src="../assets/Icon%20ionic-ios-arrow-round-back.svg" alt="back">
+</div>
+
+<div class="right_half_circle" style="display: flex;justify-content: flex-end">
+  <img src="../assets/Subtraction%2012.svg" alt="right_circle">
+</div>
+
+<div class="hello_text">
+  Hi, {{first_name}} {{last_name}}
+</div>
+
+<div style="display: flex;justify-content: center">
+  <div>
+    <input [(ngModel)]="password" class="pass" typeof="text" [style]="style__" placeholder="Please enter your password" required #pass="ngModel">
+  </div>
+</div>
+
+<div class="required_field" *ngIf="(pass.invalid && alert_user)">
+  Password required!!
+</div>
+
+<div style="display: flex;justify-content: center">
+  <button class="continue" type="button" (click)="continue(pass.invalid)">
+    <span class="button_text">CONTINUE</span>
+  </button>
+</div>
+
+<div class="forget_pass">
+  forgot my password
+</div>
+
+<div class="left_half_circle" style="display: flex;justify-content: flex-start">
+  <img src="../assets/Subtraction%2013.svg" alt="left_circle">
+</div>
+
+<div class="footer">
+  <img class="footer_img" src="../assets/illustrator.svg" alt="footer" width="80%">
+</div>

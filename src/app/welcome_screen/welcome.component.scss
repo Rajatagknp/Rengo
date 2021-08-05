@@ -1,0 +1,70 @@
+.header{
+  .background{
+    @media only screen and (min-width: 768px){
+      max-width: 768px;
+      margin-left: calc(50vw - 768px/2);
+    }
+  }
+  .logo_img{
+    position: absolute;
+    left: calc(50vw - 41.86%/2);
+    top: 16.8vw;
+    @media only screen and (min-width: 768px){
+      max-width: 321.536px;
+      top: 129.024px;
+      left: calc(50vw - 321.536px/2);
+    }
+  }
+}
+
+.welcome_text{
+  text-align: center;
+  font: normal normal bold 32px/19px Roboto;
+  color: #6A63AC;
+  margin-bottom: 65px;
+}
+
+.email_id{
+  padding: 14.5px 24px;
+  background: #FFFFFF4D 0 0 no-repeat padding-box;
+  border: 1px solid #6A63AC;
+  border-radius: 26px;
+  width: 80vw;
+  max-width: 300px;
+  height: 50px;
+  outline: 0;
+}
+
+.required_field{
+  color: red;
+  font-size: small;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: max(20vw,calc(50vw - 155px));
+}
+
+.continue{
+  margin-top: 14px;
+  cursor: pointer;
+  background: #F8A9D3 0 0 no-repeat padding-box;
+  width: 80vw;
+  max-width: 300px;
+  height: 50px;
+  border-radius: 26px;
+  border: 0;
+  margin-bottom: 42.5px;
+  .button_text{
+    font: normal normal bold 16px/17px Roboto;
+    color: #FFFFFF;
+  }
+}
+
+.footer{
+  .footer_img{
+    margin-left: calc(50vw - 78.666%/2);
+    @media only screen and (min-width: 768px){
+      max-width: 606.208px;
+      margin-left: calc(50vw - 606.208px/2);
+    }
+  }
+}
